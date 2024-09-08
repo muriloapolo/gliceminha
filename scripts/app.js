@@ -1,30 +1,43 @@
 // Função para cadastrar a glicemia
 function cadastrarGlicemia() {
     const glicemia = document.getElementById('glicemiaInput').value;
+    const dataDaAfericao = document.getElementById('data-da-afericao').value;
 
     // Verifica se o campo de glicemia foi preenchido
-    if (glicemia === '') {
-        alert('Por favor, preencha o campo de glicemia!');
+    if (glicemia === '' || dataDaAfericao == '') {
+        alert('Por favor, preencha os campos.');
         return;
     }
 
+    // Divide a string da data no formato yyyy-mm-dd
+    const partesData = dataDaAfericao.split('-');
+    const ano = partesData[0];
+    const mes = partesData[1];
+    const dia = partesData[2];
+
+    // Formata para o formato dd/mm/yyyy
+    const dataFormatada = `${dia}/${mes}/${ano}`;
+    console.log(dataFormatada)
+
     // Exibe a glicemia nos resultados
-    document.getElementById('valorGlicemia').textContent = glicemia;
+    document.getElementById('valorGlicemia').textContent = `${glicemia} mg/dL - ${dataFormatada}`;
+
 }
 
 // Função para calcular o IMC e classificar
 function calcularIMC() {
     const peso = document.getElementById('pesoInput').value;
     const altura = document.getElementById('alturaInput').value;
+    const alturaEmCM = altura / 100
 
     // Verifica se os campos de peso e altura foram preenchidos
-    if (peso === '' || altura === '') {
+    if (peso === '' || alturaEmCM === '') {
         alert('Por favor, preencha os campos de peso e altura!');
         return;
     }
 
     // Calcula o IMC
-    const imc = (peso / (altura * altura)).toFixed(2);
+    const imc = (peso / (alturaEmCM * alturaEmCM)).toFixed(2);
 
     // Classificação do IMC
     let classificacao;
