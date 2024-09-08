@@ -1,0 +1,14 @@
+{
+  "name": "glicemia_monitor",
+  "version": "1.0.0",
+  "description": "\"Monitor de glicemia para uso pessoal\".",
+  "main": "./scripts/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Murilo Apolonio",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  }
+}
