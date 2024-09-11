@@ -17,7 +17,7 @@ function cadastrarGlicemia() {
 
     // Formata para o formato dd/mm/yyyy
     const dataFormatada = `${dia}/${mes}/${ano}`;
-    console.log(dataFormatada)
+
 
     // Exibe a glicemia nos resultados
     document.getElementById('valorGlicemia').textContent = `${glicemia} mg/dL - ${dataFormatada}`;
